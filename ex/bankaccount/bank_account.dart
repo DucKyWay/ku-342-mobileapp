@@ -1,7 +1,7 @@
 class BankAccount {
-  String _accountNumber = "";
-  String _accountHolder = "";
-  double _balance = 0;
+  String _accountNumber;
+  String _accountHolder;
+  double _balance;
 
   BankAccount(this._accountHolder, this._accountNumber, this._balance);
 
@@ -39,14 +39,4 @@ class BankAccount {
       print("Insufficient funds. Cannot withdraw \$$amount.");
     }
   }
-}
-
-void main() {
-  BankAccount manus = new BankAccount("John Doe", "123456789", 500);
-
-  print("Account Holder: ${manus.getAccountHolder()} \nAccount Number: ${manus.getAccountNumber()} \nBalance \$${manus.getBalance().toStringAsFixed(2)}\n");
-  manus.setAccountHolder("Jane Doe");
-  manus.deposit(200);
-  manus.withdraw(300);
-  manus.withdraw(500);
 }
