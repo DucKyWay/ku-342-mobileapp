@@ -4,5 +4,5 @@ void main() {
   print(currentTime);
   
   // error
-  currentTime = DateTime.utc(2022, 12, 31);
+  // currentTime = DateTime.utc(2022, 12, 31);
 }
