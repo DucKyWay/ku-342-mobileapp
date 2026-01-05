@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_lab_app/w06/calculator.dart';
 
-import 'w05/widget_tree/profile_screen.dart';
-import 'w05/font_widget/exercise_01.dart';
-import 'w05/font_widget/page_view_screen.dart';
-import 'w05/font_widget/horizontal_scroll.dart';
+// import 'w05/widget_tree/profile_screen.dart';
+// import 'w05/font_widget/exercise_01.dart';
+// import 'w05/font_widget/page_view_screen.dart';
+// import 'w05/font_widget/horizontal_scroll.dart';
 
 void main() {
   runApp(const MyApp());
