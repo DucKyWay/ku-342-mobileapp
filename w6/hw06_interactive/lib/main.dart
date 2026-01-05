@@ -9,7 +9,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,19 +17,19 @@ class MyApp extends StatelessWidget {
           ThemeData.light().textTheme,
         ),
       ),
-      home: const MyHomePage(),
+      home: const CalculatorPage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class CalculatorPage extends StatefulWidget {
+  const CalculatorPage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<CalculatorPage> createState() => _CalculatorPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _CalculatorPageState extends State<CalculatorPage> {
   String _input = "";
   String _output = "";
   bool _canClickNum = true;
