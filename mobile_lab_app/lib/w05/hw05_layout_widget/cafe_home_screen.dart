@@ -1,26 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-final String imageLocation = "assets/images/";
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        textTheme: GoogleFonts.notoSansThaiTextTheme(
-          ThemeData.light().textTheme
-        )
-      ),
-      home: CafeHomePage());
-  }
-}
+final String imageLocation = "assets/images/hw05_layout_widget";
 
 class CafeHomePage extends StatelessWidget {
   const CafeHomePage({super.key});

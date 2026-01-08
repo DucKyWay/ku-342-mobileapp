@@ -62,6 +62,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/images/hw05_layout_widget/
     - assets/images/w04_flutter_widget/
     - assets/images/w04_product_layout_app/
     - assets/images/w04_week4_app/
@@ -86,6 +87,26 @@ flutter:
         - asset: assets/fonts/GraphikThaiLoop/GraphikThaiLoop-Black.otf
         - asset: assets/fonts/GraphikThaiLoop/GraphikThaiLoop-Semibold.otf
           weight: 500
+    - family: Kurale
+      fonts: 
+        - asset: assets/fonts/Kurale/Kurale-Regular.ttf
+    - family: Roboto
+      fonts: 
+        - asset: assets/fonts/Roboto/Roboto-Black.ttf
+        - asset: assets/fonts/Roboto/Roboto-BlackItalic.ttf
+        - asset: assets/fonts/Roboto/Roboto-Bold.ttf
+        - asset: assets/fonts/Roboto/Roboto-BoldItalic.ttf
+        - asset: assets/fonts/Roboto/Roboto-Italic.ttf
+        - asset: assets/fonts/Roboto/Roboto-Light.ttf
+        - asset: assets/fonts/Roboto/Roboto-LightItalic.ttf
+        - asset: assets/fonts/Roboto/Roboto-Medium.ttf
+        - asset: assets/fonts/Roboto/Roboto-MediumItalic.ttf
+        - asset: assets/fonts/Roboto/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto/Roboto-Thin.ttf
+        - asset: assets/fonts/Roboto/Roboto-ThinItalic.ttf
+    - family: Leckerli One
+      fonts: 
+        - asset: assets/fonts/LeckerliOne-Regular.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

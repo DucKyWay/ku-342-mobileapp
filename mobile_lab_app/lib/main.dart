@@ -3,6 +3,7 @@ import 'package:mobile_lab_app/w01/main.dart';
 import 'package:mobile_lab_app/w04/flutter_widget/flutter_widget.dart';
 import 'package:mobile_lab_app/w04/product_layout_app/product_layout.dart';
 import 'package:mobile_lab_app/w04/week4_app/image_use.dart';
+import 'package:mobile_lab_app/w05/hw05_layout_widget/cafe_home_screen.dart';
 import 'package:mobile_lab_app/w06/calculator.dart';
 import 'package:mobile_lab_app/w07/01_navigate/route.dart';
 import 'package:mobile_lab_app/w07/02_routes/index.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
       // home: const PageViewScreen(),
       // home: const Exercise01(),
       // home: ProfileScreen(),
+      home: CafeHomePage(),
       
       /* w06 */
       // home: CalculatorPage(),
@@ -48,7 +50,7 @@ class MyApp extends StatelessWidget {
       // home: FirstRoute(),
       // home: RouteIndex(),
       // home: BottomNavbar(),
-      home: TabBarDemo(),
+      // home: TabBarDemo(),
     );
   }
 }
