@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_lab_app/w01/main.dart';
+import 'package:mobile_lab_app/w04/flutter_widget/flutter_widget.dart';
+import 'package:mobile_lab_app/w04/product_layout_app/product_layout.dart';
+import 'package:mobile_lab_app/w04/week4_app/image_use.dart';
 import 'package:mobile_lab_app/w06/calculator.dart';
 import 'package:mobile_lab_app/w07/01_navigate/route.dart';
 import 'package:mobile_lab_app/w07/02_routes/index.dart';
@@ -15,7 +18,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({ super.key });
 
   // This widget is the root of your application.
   @override
@@ -27,7 +30,12 @@ class MyApp extends StatelessWidget {
       /* w01 */
       // home: FirstApp(),
 
-      /* w0x */
+      /* w04 */
+      // home: Week4(),
+      // home: FlutterWidget(title: "Yindeetonrub Restaurant"),
+      // home: ProductLayout(title: "Product"),
+
+      /* w05 */
       // home: const HorizontalScroll(),
       // home: const PageViewScreen(),
       // home: const Exercise01(),
