@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_lab_app/w06/calculator.dart';
-
-// import 'w05/widget_tree/profile_screen.dart';
-// import 'w05/font_widget/exercise_01.dart';
-// import 'w05/font_widget/page_view_screen.dart';
-// import 'w05/font_widget/horizontal_scroll.dart';
+import 'package:mobile_lab_app/w07/01_navigate/route.dart';
+import 'package:mobile_lab_app/w07/02_routes/index.dart';
+import 'w05/widget_tree/profile_screen.dart';
+import 'w05/font_widget/exercise_01.dart';
+import 'w05/font_widget/page_view_screen.dart';
+import 'w05/font_widget/horizontal_scroll.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +24,13 @@ class MyApp extends StatelessWidget {
       // home: const PageViewScreen(),
       // home: const Exercise01(),
       // home: ProfileScreen(),
-      home: CalculatorPage(),
+      
+      /* w06 */
+      // home: CalculatorPage(),
+
+      /* w07 */
+      // home: FirstRoute(),
+      home: RouteIndex(),
     );
   }
 }
