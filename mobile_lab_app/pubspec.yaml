@@ -67,6 +67,7 @@ flutter:
     - assets/images/w04_product_layout_app/
     - assets/images/w04_week4_app/
     - assets/images/w05_widget_tree/
+    - assets/images/hw07_restaurant_upgrade/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:mobile_lab_app/w07/04_tab_navbar/tab_bar_demo.dart';
-=======
 import 'package:mobile_lab_app/w01/main.dart';
 import 'package:mobile_lab_app/w04/flutter_widget/flutter_widget.dart';
 import 'package:mobile_lab_app/w04/product_layout_app/product_layout.dart';
@@ -17,7 +15,7 @@ import 'package:mobile_lab_app/w07/02_routes/index.dart';
 import 'package:mobile_lab_app/w07/03_bottom_navbar/buttom_navbar.dart';
 import 'package:mobile_lab_app/w07/04_tab_navbar/tab_bar_demo.dart';
 import 'package:mobile_lab_app/w07/05_drawer_nav/drawer_nav.dart';
->>>>>>> 9a93679d3c7b619596fab2541003a37201ecd28d
+import 'package:mobile_lab_app/w07/hw07_restaurant_upgrade/main.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,7 +54,8 @@ class MyApp extends StatelessWidget {
       // home: RouteIndex(), // 02_routes
       // home: BottomNavbar(), // 03_bottom_navbar
       // home: TabBarDemo(), // 04_tab_navbar
-      home: DrawerNavigate(title: "Drawers"),
+      // home: DrawerNavigate(title: "Drawers"),
+      home: RestaurantUpgradeApp(),
     );
   }
 }
