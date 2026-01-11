@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hw07_restaurant_upgrade/components/bottom_navbar.dart';
-import 'package:hw07_restaurant_upgrade/constants/menu_constant.dart';
 import 'package:hw07_restaurant_upgrade/screens/about_screen.dart';
 import 'package:hw07_restaurant_upgrade/screens/menu_screen.dart';
 import 'package:hw07_restaurant_upgrade/screens/settings_screen.dart';
@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green.shade700),
+        fontFamily: GoogleFonts.kanit().fontFamily,
       ),
       initialRoute: '/',
       routes: {
