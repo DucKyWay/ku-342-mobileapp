@@ -6,7 +6,10 @@ class AboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Yindeetonrub Restaurant")),
+      appBar: AppBar(
+        title: Text("Yindeetonrub Restaurant"),
+        backgroundColor: Colors.green.shade500,
+      ),
       body: Container(
         alignment: Alignment.topCenter,
         padding: EdgeInsets.all(10),
@@ -22,10 +25,11 @@ class AboutScreen extends StatelessWidget {
             Row(
               children: <Widget>[
                 Flexible(
-                  child: 
-                    Text("""
-\t\t\t\tร้านยินดีต้อนรับ ขอยินดีต้อนรับทุกท่านเข้าสู่แอปพลิเคชันร้านอาหารของเรา ท่านสามารถเริ่มส่งอาหารได้ที่เมนู "Home" ขอให้ทุกท่านเพลิดเพลินไปกับอาหารของเรา และหวังว่าท่านจะสนุกกับมื้อนี้ ขอบคุณที่ใช้บริการ""")
-                )
+                  child: Text(
+                    """
+\t\t\t\tร้านยินดีต้อนรับ ขอยินดีต้อนรับทุกท่านเข้าสู่แอปพลิเคชันร้านอาหารของเรา ท่านสามารถเริ่มส่งอาหารได้ที่เมนู "Home" ขอให้ทุกท่านเพลิดเพลินไปกับอาหารของเรา และหวังว่าท่านจะสนุกกับมื้อนี้ ขอบคุณที่ใช้บริการ""",
+                  ),
+                ),
               ],
             ),
             Row(
@@ -33,16 +37,16 @@ class AboutScreen extends StatelessWidget {
                 Text("""
 สถานที่: Minecraft, Java Edition Street, 11000
 เบอร์โทรศัพท์: 012-123-1212 ต่อ 1
-Facebook: Yindeetonrub Restaurant""")
+Facebook: Yindeetonrub Restaurant"""),
               ],
             ),
             Column(
               children: [
-                SizedBox(height: 20,),
+                SizedBox(height: 20),
                 Text("_____________________________"),
-                Text("Yinddetonrub Restaurant")
+                Text("Yinddetonrub Restaurant"),
               ],
-            )
+            ),
           ],
         ),
       ),
