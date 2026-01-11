@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hw07_restaurant_upgrade/screens/menu_screen.dart';
+import 'package:hw07_restaurant_upgrade/constants/menu_constant.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,6 +11,7 @@ class HomeScreen extends StatelessWidget {
         slivers: <Widget>[
           SliverAppBar(
             title: Text("Yindeetonrub Restaurant"),
+            backgroundColor: Colors.green.shade500,
             pinned: true,
             actions: [
               IconButton(
@@ -28,38 +29,12 @@ class HomeScreen extends StatelessWidget {
                 crossAxisSpacing: 10,
                 childAspectRatio: 0.8,
               ),
-              delegate: SliverChildListDelegate([
-                const MenuBox(name: "Steak", price: 200, image: "steak.webp"),
-                const MenuBox(
-                  name: "Cooked Porkchop",
-                  price: 150,
-                  image: "cooked_porkchop.webp",
-                ),
-                const MenuBox(
-                  name: "Mushroom Stew",
-                  price: 100,
-                  image: "mushroom_stew.webp",
-                ),
-                const MenuBox(
-                  name: "Rabbit Stew",
-                  price: 120,
-                  image: "rabbit_stew.webp",
-                ),
-                const MenuBox(name: "Cake", price: 170, image: "cake.png"),
-                const MenuBox(name: "Cookie", price: 20, image: "cookie.webp"),
-                const MenuBox(
-                  name: "Pumpkin Pie",
-                  price: 80,
-                  image: "pumpkin_pie.webp",
-                ),
-                const MenuBox(
-                  name: "Baked Potato",
-                  price: 40,
-                  image: "baked_potato.webp",
-                ),
-                const MenuBox(name: "Bread", price: 15, image: "bread.webp"),
-                const MenuBox(name: "Apple", price: 10, image: "apple.webp"),
-              ]),
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  return MenuBox(item: menuItems[index]);
+                },
+                childCount: menuItems.length,
+              ),
             ),
           ),
         ],
@@ -71,14 +46,10 @@ class HomeScreen extends StatelessWidget {
 class MenuBox extends StatelessWidget {
   const MenuBox({
     super.key,
-    required this.name,
-    required this.price,
-    required this.image,
+    required this.item,
   });
 
-  final String name;
-  final double price;
-  final String image;
+  final MenuItem item;
 
   @override
   Widget build(BuildContext context) {
@@ -86,20 +57,14 @@ class MenuBox extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       child: GestureDetector(
         onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) =>
-                  MenuScreen(name: name, price: price, image: image),
-            ),
-          );
+          Navigator.pushNamed(context, '/menu/${item.name}');
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Expanded(
               child: Image.asset(
-                "assets/images/$image",
+                "assets/images/${item.image}",
                 fit: BoxFit.cover,
                 width: double.infinity,
               ),
@@ -114,7 +79,7 @@ class MenuBox extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          name,
+                          item.name,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 14,
@@ -122,7 +87,7 @@ class MenuBox extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                         ),
                         Text(
-                          "฿$price",
+                          "฿${item.price}",
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             color: Colors.red[800],

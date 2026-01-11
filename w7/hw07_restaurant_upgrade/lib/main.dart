@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hw07_restaurant_upgrade/components/bottom_navbar.dart';
+import 'package:hw07_restaurant_upgrade/constants/menu_constant.dart';
 import 'package:hw07_restaurant_upgrade/screens/about_screen.dart';
 import 'package:hw07_restaurant_upgrade/screens/menu_screen.dart';
 import 'package:hw07_restaurant_upgrade/screens/settings_screen.dart';
@@ -26,13 +27,11 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: (settings) {
         if (settings.name != null && settings.name!.startsWith('/menu/')) {
           final parts = settings.name!.split('/');
-          if (parts.length >= 5) {
+          if (parts.length >= 3) {
             final name = parts[2];
-            final price = double.tryParse(parts[3]) ?? 0.0;
-            final image = parts[4];
             return MaterialPageRoute(
               builder: (context) =>
-                  MenuScreen(name: name, price: price, image: image),
+                MenuScreen(name: name),
             );
           }
         }

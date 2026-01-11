@@ -6,7 +6,12 @@ class SettingItem {
   final String subtitle;
   final Color? iconColor;
 
-  SettingItem({required this.icon, required this.title, required this.subtitle, this.iconColor});
+  SettingItem({
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+    this.iconColor,
+  });
 }
 
 class SettingsScreen extends StatelessWidget {
@@ -15,15 +20,38 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<SettingItem> items = [
-      SettingItem(icon: Icons.settings, title: "การตั้งค่าทั่วไป", subtitle: "เรื่องทั่วไป", iconColor: Colors.blue),
-      SettingItem(icon: Icons.lock, title: "ความเป็นส่วนตัว", subtitle: "เรื่องทั่วไป", iconColor: Colors.amber),
-      SettingItem(icon: Icons.notifications, title: "การแจ้งเตือน", subtitle: "เรื่องทั่วไป", iconColor: Colors.red),
-      SettingItem(icon: Icons.sunny, title: "รูปแบบแอปพลิเคชัน", subtitle: "เรื่องทั่วไป", iconColor: Colors.grey),
+      SettingItem(
+        icon: Icons.settings,
+        title: "การตั้งค่าทั่วไป",
+        subtitle: "เรื่องทั่วไป",
+        iconColor: Colors.blue,
+      ),
+      SettingItem(
+        icon: Icons.lock,
+        title: "ความเป็นส่วนตัว",
+        subtitle: "เรื่องทั่วไป",
+        iconColor: Colors.amber,
+      ),
+      SettingItem(
+        icon: Icons.notifications,
+        title: "การแจ้งเตือน",
+        subtitle: "เรื่องทั่วไป",
+        iconColor: Colors.red,
+      ),
+      SettingItem(
+        icon: Icons.sunny,
+        title: "รูปแบบแอปพลิเคชัน",
+        subtitle: "เรื่องทั่วไป",
+        iconColor: Colors.grey,
+      ),
     ];
 
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
-      appBar: AppBar(title: const Text("Yindeetonrub Restaurnt")),
+      appBar: AppBar(
+        title: const Text("Yindeetonrub Restaurnt"),
+        backgroundColor: Colors.green.shade500,
+      ),
       body: ListView.builder(
         padding: const EdgeInsets.all(8),
         itemCount: items.length,
@@ -32,7 +60,7 @@ class SettingsScreen extends StatelessWidget {
             icon: items[index].icon,
             title: items[index].title,
             subtitle: items[index].subtitle,
-            iconColor: items[index].iconColor
+            iconColor: items[index].iconColor,
           );
         },
       ),
@@ -46,7 +74,7 @@ class SettingMenuBox extends StatelessWidget {
     required this.icon,
     required this.title,
     required this.subtitle,
-    this.iconColor
+    this.iconColor,
   });
 
   final IconData icon;
@@ -75,9 +103,11 @@ class SettingMenuBox extends StatelessWidget {
           // ไอคอนในวงกลม
           CircleAvatar(
             backgroundColor: Colors.grey.shade100,
-            child: Icon(icon, color: iconColor ??Colors.blue, size: 24),
+            child: Icon(icon, color: iconColor ?? Colors.blue, size: 24),
           ),
-          const SizedBox(width: 16), // เว้นวรรคแทน spacing (ใน Flutter บาง version)
+          const SizedBox(
+            width: 16,
+          ), // เว้นวรรคแทน spacing (ใน Flutter บาง version)
           // ข้อความ
           Expanded(
             child: Column(
@@ -85,7 +115,10 @@ class SettingMenuBox extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
                 ),
                 Text(
                   subtitle,
