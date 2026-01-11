@@ -1,14 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_lab_app/w01/main.dart';
-import 'package:mobile_lab_app/w06/calculator.dart';
-import 'package:mobile_lab_app/w07/01_navigate/route.dart';
-import 'package:mobile_lab_app/w07/02_routes/index.dart';
-import 'package:mobile_lab_app/w07/03_bottom_navbar/buttom_navbar.dart';
 import 'package:mobile_lab_app/w07/04_tab_navbar/tab_bar_demo.dart';
-import 'w05/widget_tree/profile_screen.dart';
-import 'w05/font_widget/exercise_01.dart';
-import 'w05/font_widget/page_view_screen.dart';
-import 'w05/font_widget/horizontal_scroll.dart';
 
 void main() {
   runApp(const MyApp());

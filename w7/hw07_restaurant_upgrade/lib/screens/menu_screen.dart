@@ -1,39 +1,55 @@
 import 'package:flutter/material.dart';
 
-class MenuGrid extends StatelessWidget {
-  const MenuGrid({super.key});
+class MenuScreen extends StatelessWidget {
+  const MenuScreen({
+    super.key,
+    required this.name,
+    required this.price,
+    required this.image,
+  });
+
+  final String name;
+  final double price;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Menu: $name'),
+        // actions: [
+        //   IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.arrow_back))
+        // ],
+      ),
+      body: Expanded(
+        child: MenuDescription(name: name, price: price, image: image),
+      ),
+    );
   }
 }
 
-class MenuCard extends StatelessWidget {
-  const MenuCard({super.key});
+class MenuDescription extends StatelessWidget {
+  const MenuDescription({
+    super.key,
+    required this.name,
+    required this.price,
+    required this.image,
+  });
+
+  final String name;
+  final double price;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
-
-class MenuItem extends StatelessWidget {
-  const MenuItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
-
-final List<MenuItem> menuItems = [];
-
-class FoodDetail extends StatelessWidget {
-  const FoodDetail({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
+    return Card(
+      child: Column(
+        children: [
+          Image.asset('assets/images/$image'),
+          Text(name),
+          Text(price.toString()),
+        ],
+      ),
+    );
   }
 }
