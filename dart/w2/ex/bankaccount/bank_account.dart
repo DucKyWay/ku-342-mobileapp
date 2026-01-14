@@ -5,21 +5,13 @@ class BankAccount {
 
   BankAccount(this._accountHolder, this._accountNumber, this._balance);
 
-  double getBalance() {
-    return this._balance;
-  }
+  double get balance => this._balance;
+  String get accountHolder => this._accountHolder;
+  String get accountNumber => this._accountNumber;
 
-  String getAccountHolder() {
-    return this._accountHolder;
-  }
-
-  void setAccountHolder(String holder) {
+  void set accountHolder(String holder) {
     this._accountHolder = holder;
     print("Account Holder updated to: $holder\n");
-  }
-
-  String? getAccountNumber() {
-    return this._accountNumber;
   }
 
   void deposit(double amount) {
