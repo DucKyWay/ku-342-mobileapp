@@ -6,7 +6,7 @@ void main() {
     'Plane',
   ];
 
-  var halogens = {'fluorine', 'chlorine', 'bromine'};
+  var halogens = {'fluorine', 'chlorine', 'bromine'}; // map
   var names = <String>{};
   // Set<String> names = {}; // This works, too.
   // var names = {}; // Creates a map, not a set.
