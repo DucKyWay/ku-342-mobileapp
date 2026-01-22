@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+// import 'package:flutter_riverpod/flutter_riverpod.dart'; // if use 08_03 comment this line
 import 'package:mobile_lab_app/w01/main.dart';
 import 'package:mobile_lab_app/w04/flutter_widget/flutter_widget.dart';
 import 'package:mobile_lab_app/w04/week4_app/image_use.dart';
@@ -15,9 +17,33 @@ import 'package:mobile_lab_app/w07/03_bottom_navbar/buttom_navbar.dart';
 import 'package:mobile_lab_app/w07/04_tab_navbar/tab_bar_demo.dart';
 import 'package:mobile_lab_app/w07/05_drawer_nav/drawer_nav.dart';
 import 'package:mobile_lab_app/w07/hw07_restaurant_upgrade/main.dart';
+import 'package:mobile_lab_app/w08/01/_01.dart';
+import 'package:mobile_lab_app/w08/02/main.dart';
+import 'package:mobile_lab_app/w08/03/_03_main.dart';
+import 'package:mobile_lab_app/w08/03/counter_provider.dart';
+import 'package:mobile_lab_app/w08/04/riverpod_first_screen.dart';
+import 'package:mobile_lab_app/w08/04/riverpod_second_screen.dart';
+import 'package:mobile_lab_app/w08/05/counter_home_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  // runApp(const MyApp());
+
+  /* only on w08_3 */
+  runApp( 
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => Counter03Provider()
+        ),
+      ],
+      child: const MyApp(),
+    )
+  );
+  
+  /* only on w08_4 */
+  // runApp(const ProviderScope(
+  //   child: MyApp())
+  // );
 }
 
 class MyApp extends StatelessWidget {
@@ -54,7 +80,15 @@ class MyApp extends StatelessWidget {
       // home: BottomNavbar(), // 03_bottom_navbar
       // home: TabBarDemo(), // 04_tab_navbar
       // home: DrawerNavigate(title: "Drawers"),
-      home: RestaurantUpgradeApp(),
+      // home: RestaurantUpgradeApp(),
+
+      /* w08 */
+      // home: ProgramOneScreen(), // 01_
+      // home: ProgramTwoScreen(), // 02_
+      home: Counter03Screen(),
+      // home: RiverpodFirstScreen(), // 04_riverpod
+      // home: RiverpodSecondScreen(), // 04_riverpod
+      // home: CounterHomeScreen(), // 05_bloc
     );
   }
 }
