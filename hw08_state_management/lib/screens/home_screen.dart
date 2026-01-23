@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../constants/menu_constant.dart';
 
+const String imagePath = "assets/images/hw08_restaurant_cart";
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -10,13 +12,15 @@ class HomeScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            title: Text("Yindeetonrub Restaurant"),
+            title: Text("Yindeetonrub Restaurant", style: TextStyle(color: Colors.white),),
             backgroundColor: Colors.green.shade500,
             pinned: true,
             actions: [
               IconButton(
-                icon: Icon(Icons.shopping_cart_outlined),
-                onPressed: () {},
+                icon: Icon(Icons.shopping_cart_outlined, color: Colors.white,),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/cart');
+                },
               ),
             ],
           ),
@@ -64,7 +68,7 @@ class MenuBox extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Image.asset(
-                "assets/images/hw07_restaurant_upgrade/${item.image}",
+                "$imagePath/${item.image}",
                 fit: BoxFit.cover,
                 width: double.infinity,
               ),

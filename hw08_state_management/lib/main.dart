@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hw08_state_management/screens/cart_screen.dart';
 import './components/bottom_navbar.dart';
 import './screens/about_screen.dart';
 import './screens/menu_screen.dart';
 import './screens/settings_screen.dart';
 
-class RestaurantUpgradeApp extends StatelessWidget {
-  const RestaurantUpgradeApp({super.key});
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +25,7 @@ class RestaurantUpgradeApp extends StatelessWidget {
         '/': (context) => const BottomNavbar(),
         '/about': (context) => const AboutScreen(),
         '/settings': (context) => const SettingsScreen(),
+        '/cart': (context) => const CartScreen(),
       },
       onGenerateRoute: (settings) {
         if (settings.name != null && settings.name!.startsWith('/menu/')) {
