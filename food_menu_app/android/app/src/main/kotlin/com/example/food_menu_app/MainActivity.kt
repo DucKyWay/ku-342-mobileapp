@@ -1,4 +1,4 @@
-package com.example.hw08_state_management
+package com.example.food_menu_app
 
 import io.flutter.embedding.android.FlutterActivity
 
