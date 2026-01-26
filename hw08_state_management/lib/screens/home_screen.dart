@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../constants/menu_constant.dart';
+import '../models/cart_model.dart';
 
 const String imagePath = "assets/images/hw08_restaurant_cart";
 
@@ -102,7 +104,12 @@ class MenuBox extends StatelessWidget {
                   ),
                   IconButton(
                     icon: Icon(Icons.add_shopping_cart, color: Colors.grey),
-                    onPressed: () {},
+                    onPressed: () {
+                      Provider.of<CartModel>(context, listen: false).add(item);
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text("เพิ่ม ${item.name} ลงตะกร้าแล้ว"))
+                      );
+                    },
                   ),
                 ],
               ),

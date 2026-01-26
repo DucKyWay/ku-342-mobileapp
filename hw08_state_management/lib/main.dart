@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hw08_state_management/screens/cart_screen.dart';
+import 'package:provider/provider.dart';
+import './models/cart_model.dart';
 import './components/bottom_navbar.dart';
 import './screens/about_screen.dart';
-import './screens/menu_screen.dart';
 import './screens/settings_screen.dart';
+import './screens/menu_screen.dart';
+import './screens/cart_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(create: (_) => CartModel(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -33,8 +35,7 @@ class MyApp extends StatelessWidget {
           if (parts.length >= 3) {
             final name = parts[2];
             return MaterialPageRoute(
-              builder: (context) =>
-                MenuScreen(name: name),
+              builder: (context) => MenuScreen(name: name),
             );
           }
         }
