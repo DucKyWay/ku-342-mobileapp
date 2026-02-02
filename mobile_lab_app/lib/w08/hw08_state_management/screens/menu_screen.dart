@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_lab_app/w07/hw07_restaurant_upgrade/constants/menu_constant.dart';
+import '../constants/menu_constant.dart';
+
+const String imagePath = "assets/images/restaurant_food_image_menu";
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key, required this.name});
@@ -39,7 +41,7 @@ class MenuCard extends StatelessWidget {
     return Column(
       children: [
         Image.asset(
-          'assets/images/restaurant_food_image_menu/${item.image}',
+          '$imagePath/${item.image}',
           height: 200,
           fit: BoxFit.contain,
         ),

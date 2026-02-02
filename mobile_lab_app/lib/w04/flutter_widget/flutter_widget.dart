@@ -91,7 +91,7 @@ class MenuBox extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: Image.asset(
-              "assets/images/w04_flutter_widget/$image",
+              "assets/images/restaurant_food_image_menu/$image",
               fit: BoxFit.cover,
               width: double.infinity,
             ),

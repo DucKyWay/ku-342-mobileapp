@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart'; // if use 08_03 comment this line
+// import 'package:flutter_riverpod/flutter_riverpod.dart'; // if use 08_03 comment this line
 // import 'w01/main.dart';
 // import 'w04/flutter_widget/flutter_widget.dart';
 // import 'w04/week4_app/image_use.dart';
@@ -24,17 +24,24 @@ import 'package:flutter_riverpod/flutter_riverpod.dart'; // if use 08_03 comment
 // import 'w08/04/riverpod_first_screen.dart';
 // import 'w08/04/riverpod_second_screen.dart';
 // import 'w08/05/counter_home_screen.dart';
-import 'w09/product.dart';
-import 'w09/products.dart';
+
+/* 2 line when run hw08 */
+// import 'w08/hw08_state_management/main.dart';
+// import 'w08/hw08_state_management/models/cart_model.dart';
+
+// import 'w09/product.dart';
+// import 'w09/products.dart';
+import 'w09/hw09_async_weather/weather_screen.dart';
 
 void main() {
+
   runApp(const MyApp());
 
   /* only on w08_3 */
   // runApp( 
   //   MultiProvider(
   //     providers: [
-  //       ChangeNotifierProvider(
+  //       ChangeNotifierProvider(s
   //         create: (context) => Counter03Provider()
   //       ),
   //     ],
@@ -46,6 +53,9 @@ void main() {
   // runApp(const ProviderScope(
   //   child: MyApp())
   // );
+
+  /* only on hw08_state_management */
+  // runApp(ChangeNotifierProvider(create: (_) => CartModel(), child: RestaurantApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -56,7 +66,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.blue), // only ProfileScreen()
+      // theme: ThemeData(primarySwatch: Colors.blue), // only ProfileScreen()
 
       /* w01 */
       // home: FirstApp(),
@@ -94,7 +104,8 @@ class MyApp extends StatelessWidget {
 
       /* w09 */
       // home: ProductScreen(),
-      home: ProductsScreen(),
+      // home: ProductsScreen(),
+      home: WeatherScreen(),
     );
   }
 }

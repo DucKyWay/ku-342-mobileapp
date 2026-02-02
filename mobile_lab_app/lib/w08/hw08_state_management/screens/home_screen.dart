@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_lab_app/w07/hw07_restaurant_upgrade/constants/menu_constant.dart';
+import 'package:provider/provider.dart';
+import '../constants/menu_constant.dart';
+import '../models/cart_model.dart';
+
+const String imagePath = "assets/images/restaurant_food_image_menu";
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,13 +14,15 @@ class HomeScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            title: Text("Yindeetonrub Restaurant"),
+            title: Text("Yindeetonrub Restaurant", style: TextStyle(color: Colors.white),),
             backgroundColor: Colors.green.shade500,
             pinned: true,
             actions: [
               IconButton(
-                icon: Icon(Icons.shopping_cart_outlined),
-                onPressed: () {},
+                icon: Icon(Icons.shopping_cart_outlined, color: Colors.white,),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/cart');
+                },
               ),
             ],
           ),
@@ -64,7 +70,7 @@ class MenuBox extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Image.asset(
-                "assets/images/restaurant_food_image_menu/${item.image}",
+                "$imagePath/${item.image}",
                 fit: BoxFit.cover,
                 width: double.infinity,
               ),
@@ -98,7 +104,12 @@ class MenuBox extends StatelessWidget {
                   ),
                   IconButton(
                     icon: Icon(Icons.add_shopping_cart, color: Colors.grey),
-                    onPressed: () {},
+                    onPressed: () {
+                      Provider.of<CartModel>(context, listen: false).add(item);
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text("เพิ่ม ${item.name} ลงตะกร้าแล้ว"))
+                      );
+                    },
                   ),
                 ],
               ),
