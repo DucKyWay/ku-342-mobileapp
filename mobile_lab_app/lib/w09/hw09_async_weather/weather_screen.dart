@@ -2,26 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'weather_model.dart';
 
-const String weatherApiKey = "SECRET_NA";
-
-class Weather {
-  final String city;
-  final double temp;
-  final String weather;
-  final String icon;
-
-  Weather({required this.city, required this.temp, required this.weather, required this.icon});
-
-  factory Weather.fromJson(Map<String, dynamic> json) {
-    return Weather(
-      city: json["name"],
-      temp: (json["main"]["temp"] as num).toDouble(),
-      weather: json["weather"][0]["main"],
-      icon: json["weather"][0]["icon"],
-    );
-  }
-}
+const String weatherApiKey = "SECRET";
 
 Future<Weather> fetchData(String city) async {
   final response = await http.get(
